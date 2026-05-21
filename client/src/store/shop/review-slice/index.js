@@ -10,7 +10,7 @@ export const addReview = createAsyncThunk(
   "/review/addReview",
   async (formdata) => {
     const response = await axios.post(
-      `${https://vinkart-server.onrender.com}/api/shop/review/add`,
+      `https://vinkart-server.onrender.com/api/shop/review/add`,
       formdata
     );
 
@@ -20,7 +20,7 @@ export const addReview = createAsyncThunk(
 
 export const getReviews = createAsyncThunk("/order/getReviews", async (id) => {
   const response = await axios.get(
-    `${https://vinkart-server.onrender.com}/api/shop/review/${id}`
+    `https://vinkart-server.onrender.com/api/shop/review/${id}`
   );
 
   return response.data;

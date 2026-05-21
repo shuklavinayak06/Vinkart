@@ -10,7 +10,7 @@ export const getSearchResults = createAsyncThunk(
   "/search/getSearchResults",
   async (keyword) => {
     const response = await axios.get(
-      `${https://vinkart-server.onrender.com}/api/shop/search/${keyword}`
+      `https://vinkart-server.onrender.com/api/shop/search/${keyword}`
     );
 
     return response.data;
