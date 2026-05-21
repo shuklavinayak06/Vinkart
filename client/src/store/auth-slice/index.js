@@ -9,58 +9,51 @@ const initialState = {
 
 export const registerUser = createAsyncThunk(
   "/auth/register",
-
   async (formData) => {
     const response = await axios.post(
-      `${https://vinkart-server.onrender.com}/api/auth/register`,
+      `https://vinkart-server.onrender.com/api/auth/register`,
       formData,
       {
         withCredentials: true,
       }
     );
-
     return response.data;
   }
 );
 
 export const loginUser = createAsyncThunk(
   "/auth/login",
-
   async (formData) => {
     const response = await axios.post(
-      `${https://vinkart-server.onrender.com}/api/auth/login`,
+      `https://vinkart-server.onrender.com/api/auth/login`,
       formData,
       {
         withCredentials: true,
       }
     );
-
     return response.data;
   }
 );
 
 export const logoutUser = createAsyncThunk(
   "/auth/logout",
-
   async () => {
     const response = await axios.post(
-      `${https://vinkart-server.onrender.com}/api/auth/logout`,
+      `https://vinkart-server.onrender.com/api/auth/logout`,
       {},
       {
         withCredentials: true,
       }
     );
-
     return response.data;
   }
 );
 
 export const checkAuth = createAsyncThunk(
   "/auth/checkauth",
-
   async () => {
     const response = await axios.get(
-      `${https://vinkart-server.onrender.com}/api/auth/check-auth`,
+      `https://vinkart-server.onrender.com/api/auth/check-auth`,
       {
         withCredentials: true,
         headers: {
@@ -69,7 +62,6 @@ export const checkAuth = createAsyncThunk(
         },
       }
     );
-
     return response.data;
   }
 );
@@ -99,8 +91,6 @@ const authSlice = createSlice({
         state.isLoading = true;
       })
       .addCase(loginUser.fulfilled, (state, action) => {
-        console.log(action);
-
         state.isLoading = false;
         state.user = action.payload.success ? action.payload.user : null;
         state.isAuthenticated = action.payload.success;
