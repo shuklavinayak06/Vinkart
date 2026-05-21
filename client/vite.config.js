@@ -10,6 +10,6 @@ export default defineConfig({
     },
   },
   define: {
-    'import.meta.env.VITE_API_URL': JSON.stringify(process.env.VITE_API_URL || 'https://vinkart-server.onrender.com')
+    'https://vinkart-server.onrender.com': JSON.stringify(process.env.VITE_API_URL || 'https://vinkart-server.onrender.com')
   }
 })
