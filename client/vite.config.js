@@ -9,7 +9,4 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
-  define: {
-    'https://vinkart-server.onrender.com': JSON.stringify(process.env.VITE_API_URL || 'https://vinkart-server.onrender.com')
-  }
 })
